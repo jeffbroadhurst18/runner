@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 
 @Component({
     selector: 'my-app',
-    template: `<h1>Hello Angular</h1>`
+    template: `<h1>{{title}}</h1><router-outlet></router-outlet>`
 })
-export class AppComponent { }
+export class AppComponent {
+    title = 'Runner Administration Program';
+}

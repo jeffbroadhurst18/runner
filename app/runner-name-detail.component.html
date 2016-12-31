@@ -1,0 +1,18 @@
+<div *ngIf="runner">
+    <h2>{{runner.name}} details!</h2>
+    <div><label>id:</label>{{runner.id}}</div>
+    <div>
+        <label>name: </label>
+        <input [(ngModel)]="runner.name" placeholder="name">
+    </div>
+    <div>
+        <label>sex: </label>
+        <input [(ngModel)]="runner.sex" placeholder="sex">
+    </div>
+    <div>
+        <label>age: </label>
+        <input [(ngModel)]="runner.age" placeholder="age">
+    </div>
+    <button (click)="goBack()">Back</button>
+    <button (click)="save()">Save</button>
+</div>

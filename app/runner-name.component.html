@@ -11,10 +11,13 @@
     </h2>
   </div>
   <div>
-    Sex: {{ selectedRunner.sex}}
+    Sex: {{ selectedRunner.sex | transformSex}}
   </div>
   <div>
-    Age: {{ selectedRunner.age}}
+    Age: {{ selectedRunner.age | transformAge}}
+  </div>
+  <div>
+    Best: {{ selectedRunner.best | transformBest}}
   </div>
   <button (click)="gotoDetail()">Edit Details</button>
   <button (click)="delete()">Delete</button>

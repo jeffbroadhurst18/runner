@@ -1,17 +1,34 @@
-<div>
+<form (ngSubmit)="save()" #runnerNewForm="ngForm" class="form-group">
+  <div>
     <h2>Enter runner details</h2>
     <div>
-        <label>name: </label>
-        <input [(ngModel)]="runner.name" placeholder="name" ng-required="true">
+      <label>name: </label>
+      <input [(ngModel)]="runner.name" placeholder="name" ng-required="true" name="name" required>
     </div>
     <div>
-        <label>sex: </label>
-        <input [(ngModel)]="runner.sex" placeholder="sex" ng-required="true">
+      <label>sex: </label>
+      <select id="sex" [(ngModel)]="runner.sex" name="sex" required>
+            <option value="0">M</option>
+            <option value="1">F</option>
+        </select>
     </div>
     <div>
-        <label>age: </label>
-        <input [(ngModel)]="runner.age" placeholder="age" ng-required="true">
+      <label>age: </label>
+      <select id="age" [(ngModel)]="runner.age" name="age" required>
+            <option value="0"> 0- 9</option>
+            <option value="1">10-19</option>
+            <option value="2">20-29</option>
+            <option value="3">30-39</option>
+            <option value="4">40-49</option>
+            <option value="5">50-59</option>
+        </select>
+    </div>
+    <div>
+      <input [(ngModel)]="runner.bestmins" placeholder="best mins" type="number" min="0" max="59" required name="bestmins">
+      <input [(ngModel)]="runner.bestsecs" placeholder="best secs" type="number" min="0" max="59" required name="bestsecs">
     </div>
     <button (click)="goBack()">Back</button>
-    <button (click)="save()">Save</button>
-</div>
+    <input type=submit>
+    <!--<button (click)="save()">Save</button>-->
+  </div>
+</form>

@@ -24,7 +24,6 @@ export class RunnerNameService {
     }
 
      update(runner:Runner): Promise<Runner>{
-             //const url = `${this.runnerUrl}/${runner.id}`;
              const url = `${this.runnerUrl}`;
              return this.http
             .post(url, JSON.stringify(runner), {headers: this.headers})

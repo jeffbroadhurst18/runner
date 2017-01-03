@@ -20,8 +20,14 @@ constructor(
 ngOnInit(): void {
     this.route.params.forEach((params: Params) => {
         let id = +params['id'];
-        this.runnerNameService.getRunner(id).then(runner => this.runner = runner);
+        this.runnerNameService.getRunner(id).then(runner => this.addBests(runner));
     });
+}
+
+addBests(runner:Runner): void {
+    this.runner = runner;
+    this.runner.bestmins = this.runner.best != null ? Math.floor(this.runner.best/60) : 0;
+    this.runner.bestsecs = this.runner.best != null ? this.runner.best % 60 : 0;
 }
 
 goBack():void {
@@ -29,7 +35,7 @@ goBack():void {
 }
 
 save():void {
-    this.runnerNameService.update(this.runner).then(() => this.goBack());
+      this.runnerNameService.update(this.runner).then(() => this.goBack());
 }
 
 @Input()

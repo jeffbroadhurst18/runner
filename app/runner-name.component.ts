@@ -28,6 +28,8 @@ export class RunnerNameComponent implements OnInit {
 
   onSelect(runner: Runner): void {
     this.selectedRunner = runner;
+    this.selectedRunner.bestmins = Math.floor(this.selectedRunner.best/60);
+    this.selectedRunner.bestsecs = this.selectedRunner.best % 60;
   }
 
   gotoDetail(): void {

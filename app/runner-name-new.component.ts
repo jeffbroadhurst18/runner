@@ -11,29 +11,29 @@ templateUrl: 'runner-name-new.component.html',
 })
 
 export class RunnerNameNewComponent implements OnInit {
-constructor(
-    private runnerNameService: RunnerNameService,
-    private route: ActivatedRoute,
-    private location: Location,
-     
-){}
+        constructor(
+            private runnerNameService: RunnerNameService,
+            private route: ActivatedRoute,
+            private location: Location,
+            
+        ){}
 
-runner: Runner;  
+        runner: Runner;  
 
-ngOnInit(): void {
-this.setUpNewRunner();
-}
+        ngOnInit(): void {
+            this.setUpNewRunner();
+        }
 
-setUpNewRunner(): void{
-   this.runner = new Runner();
-}
+        setUpNewRunner(): void{
+            this.runner = new Runner();
+        }
 
-goBack():void {
-    this.location.back();
-}
+        goBack():void {
+            this.location.back();
+        }
 
-save():void {
-    this.runnerNameService.update(this.runner).then(() => this.goBack());
-}
-
+        save():void {
+            this.runner.best = (Number(this.runner.bestmins) * 60) + Number(this.runner.bestsecs);
+            this.runnerNameService.update(this.runner).then(() => this.goBack());
+        }
 }

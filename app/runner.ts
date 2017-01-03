@@ -1,6 +1,9 @@
 export class Runner {
     id: number;
     name: string;
-    sex: string;
-    age: string;
+    sex: number;
+    age: number;
+    best: number;
+    bestmins: number;
+    bestsecs: number;
 }

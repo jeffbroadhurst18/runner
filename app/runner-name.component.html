@@ -1,28 +1,38 @@
 <h2>Runner List </h2>
-<ul>
-  <li *ngFor="let runner of runners" (click)="onSelect(runner)">
-    <div>{{runner.id}} {{runner.name}}</div>
-  </li>
-</ul>
-<div *ngIf="selectedRunner">
-  <div>
-    <h2>
-      Name: {{ selectedRunner.name | uppercase}}
-    </h2>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3">
+      <ul>
+        <li *ngFor="let runner of runners" (click)="onSelect(runner)">
+          <div>{{runner.id}} {{runner.name}}</div>
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="selectedRunner" class="col-md-3">
+      <div>
+        <h2>
+          Name: {{ selectedRunner.name | uppercase}}
+        </h2>
+      </div>
+      <div>
+        Sex: {{ selectedRunner.sex | transformSex}}
+      </div>
+      <div>
+        Age: {{ selectedRunner.age | transformAge}}
+      </div>
+      <div>
+        Best: {{ selectedRunner.best | transformBest}}
+      </div>
+      <button (click)="gotoDetail()">Edit Details</button>
+      <button (click)="delete()">Delete</button>
+      <button (click)="close()">Close</button>
+    </div>
+    <div class="col-md-3">
+      <runner-name-search></runner-name-search>
+    </div>
+    <div class="row" *ngIf="!selectedRunner">
+      <button (click)="newDetail()">Enter New Runner</button>
+    </div>
   </div>
-  <div>
-    Sex: {{ selectedRunner.sex | transformSex}}
-  </div>
-  <div>
-    Age: {{ selectedRunner.age | transformAge}}
-  </div>
-  <div>
-    Best: {{ selectedRunner.best | transformBest}}
-  </div>
-  <button (click)="gotoDetail()">Edit Details</button>
-  <button (click)="delete()">Delete</button>
-  <button (click)="close()">Close</button>
-</div>
-<div *ngIf="!selectedRunner">
-  <button (click)="newDetail()">Enter New Runner</button>
+  
 </div>

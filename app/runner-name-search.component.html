@@ -1,0 +1,9 @@
+<div id="search-component">
+    <h4>Runner Search</h4>
+    <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+    <div>
+        <div *ngFor="let runner of runners | async" (click)="gotoDetail(runner)">
+            {{runner.name}}
+        </div>
+    </div>
+</div>

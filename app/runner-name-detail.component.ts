@@ -35,6 +35,7 @@ goBack():void {
 }
 
 save():void {
+      this.runner.best = (Number(this.runner.bestmins) * 60) + Number(this.runner.bestsecs);
       this.runnerNameService.update(this.runner).then(() => this.goBack());
 }
 

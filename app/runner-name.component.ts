@@ -6,7 +6,8 @@ import { Router } from '@angular/router';
 @Component({
   moduleId: module.id,
   selector: 'my-runnername',
-  templateUrl: 'runner-name.component.html'
+  templateUrl: 'runner-name.component.html',
+  styleUrls: ['https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.css'],
 })
 
 export class RunnerNameComponent implements OnInit {

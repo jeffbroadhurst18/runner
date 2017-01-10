@@ -9,6 +9,8 @@ import { RunnerNameComponent } from './runner-name.component';
 import { RunnerNameService } from './runner-name.service';
 import { RunnerNameDetailComponent } from './runner-name-detail.component';
 import { RunnerNameNewComponent } from './runner-name-new.component';
+import { RunnerNameSearchComponent } from './runner-name-search.component';
+import { RunnerNameSearchService } from './runner-name-search.service';
 import { TransformBestPipe, TransformAgePipe, TransformSexPipe } from './runner-name.component.pipe';
 import './rxjs-extensions';
 
@@ -17,8 +19,9 @@ import './rxjs-extensions';
     FormsModule,AppRoutingModule,
     HttpModule],
   declarations: [AppComponent, RunnerNameComponent,RunnerNameDetailComponent,RunnerNameNewComponent,
+  RunnerNameSearchComponent,
   TransformBestPipe, TransformAgePipe, TransformSexPipe],
   bootstrap: [AppComponent],
-  providers: [RunnerNameService]
+  providers: [RunnerNameService,RunnerNameService]
 })
 export class AppModule { }

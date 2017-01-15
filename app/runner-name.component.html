@@ -30,9 +30,13 @@
     <div class="col-md-3">
       <runner-name-search></runner-name-search>
     </div>
-    <div class="row" *ngIf="!selectedRunner">
-      <button (click)="newDetail()">Enter New Runner</button>
+    <div class="col-md-3">
+      <div class="row" *ngIf="!selectedRunner">
+        <button (click)="newDetail()">Enter New Runner</button>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <my-wiki></my-wiki>
     </div>
   </div>
-  
 </div>

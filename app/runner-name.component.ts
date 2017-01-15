@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Jsonp, URLSearchParams } from '@angular/http';
 import { RunnerNameService } from './runner-name.service';
 import { Runner } from './runner';
-import { Router } from '@angular/router';
+
 
 @Component({
   moduleId: module.id,

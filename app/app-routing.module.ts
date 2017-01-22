@@ -19,6 +19,16 @@ const routes: Routes = [
            component: RunnerNameNewComponent  
      },
      {
+           path : 'wiki',
+           redirectTo: 'wiki',
+           pathMatch: 'full'
+     },
+     {
+           path : 'weather',
+           redirectTo: 'weather',
+           pathMatch: 'full'
+     },
+     {
            path: '',
            redirectTo: '/runner',
            pathMatch: 'full'

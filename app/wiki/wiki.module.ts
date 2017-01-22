@@ -5,11 +5,11 @@ import { CommonModule }       from '@angular/common';
 
 import { WikiComponent} from './wiki.component';
 import { WikipediaService} from './wikipedia.service';
+import { WikiRoutingModule} from './wiki-routing.module';
 
 @NgModule({
-  imports:      [ FormsModule,CommonModule ],
+  imports:      [ FormsModule,CommonModule,WikiRoutingModule ],
   declarations: [ WikiComponent ],
-  exports:      [ WikiComponent ],
   providers:    [ WikipediaService ] 
 })
 export class WikiModule { }

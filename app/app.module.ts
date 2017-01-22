@@ -5,6 +5,7 @@ import { HttpModule,JsonpModule } from '@angular/http';
 import { Router } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { WikiModule } from './wiki/wiki.module';
+import { WeatherModule } from './weather/weather.module';
 
 import { AppComponent } from './app.component';
 import { RunnerNameComponent } from './runner-name.component';
@@ -20,11 +21,11 @@ import './rxjs-extensions';
 @NgModule({
   imports: [BrowserModule,
     FormsModule,AppRoutingModule,
-    HttpModule,JsonpModule,WikiModule],
+    HttpModule,JsonpModule,WikiModule,WeatherModule],
   declarations: [AppComponent, RunnerNameComponent,RunnerNameDetailComponent,RunnerNameNewComponent,
   RunnerNameSearchComponent,HighlightDirective,
   TransformBestPipe, TransformAgePipe, TransformSexPipe],
   bootstrap: [AppComponent],
-  providers: [RunnerNameService,RunnerNameService]
+  providers: [RunnerNameService]
 })
 export class AppModule { }

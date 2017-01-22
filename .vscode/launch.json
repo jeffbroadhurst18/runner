@@ -18,7 +18,7 @@
             "request": "attach",
             "name": "Attach to Process",
              "port": 9222,
-             "url": "http://localhost:3000/runner",
+             "url": "http://localhost:3000/weather",
             "sourceMaps": true,
              "webRoot": "${workspaceRoot}"
         }

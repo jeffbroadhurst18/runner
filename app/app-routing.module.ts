@@ -29,6 +29,11 @@ const routes: Routes = [
            pathMatch: 'full'
      },
      {
+           path : 'animation',
+           redirectTo: 'animation',
+           pathMatch: 'full'
+     },
+     {
            path: '',
            redirectTo: '/runner',
            pathMatch: 'full'

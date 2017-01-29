@@ -19,10 +19,13 @@ export class RunnerNameComponent implements OnInit {
 
   runners: Runner[];
   selectedRunner: Runner;
-
+  errorMessage: string;
 
   getRunners(): void {
-    this.runnerNameService.getRunners().then(runners => this.runners = runners);
+   // this.runnerNameService.getRunners().then(runners => this.runners = runners);
+   this.runnerNameService.getRunners().subscribe(
+     runners => this.runners = runners,
+     error => this.errorMessage = <any>error)
   }
 
   ngOnInit(): void {

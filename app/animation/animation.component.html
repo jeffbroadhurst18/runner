@@ -1,0 +1,6 @@
+<h3 myBackground [highlightColor]="color">Animation</h3>
+<ul>
+  <li *ngFor="let country of countries" [@countryState]="country.state" (click)="country.toggleState()">
+    {{country.name}}
+  </li>
+</ul>

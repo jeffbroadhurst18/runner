@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Runner } from './runner';
-import { Headers, Http } from '@angular/http';
+import { Headers, Http,Response } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/toPromise';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class RunnerNameService {
@@ -13,14 +16,25 @@ export class RunnerNameService {
        
      }
 
-    getRunners(): Promise<Runner[]> {
-        return this.http.get(this.runnerUrl).toPromise()
-            .then(response => response.json() as Runner[])
-            .catch(this.handleError)
+    // getRunners(): Promise<Runner[]> {
+    //     return this.http.get(this.runnerUrl).toPromise()
+    //         .then(response => response.json() as Runner[])
+    //         .catch(this.handleError)
+    // }
+
+    getRunners(): Observable<Runner[]>{
+        return this.http.get(this.runnerUrl).map(this.extractData)
+        .catch(this.handleError);
+    }
+
+    private extractData(res:Response)
+    {
+            let body = res.json();
+            return body || { };
     }
 
     getRunner(id: number): Promise<Runner> {
-        return this.getRunners().then(runners => runners.find(runner => runner.id === id));
+        return this.getRunners().toPromise().then(runners => runners.find(runner => runner.id === id));
     }
 
      update(runner:Runner): Promise<Runner>{
